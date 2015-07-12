@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'coveralls'
 Coveralls.wear!('rails')
 
@@ -93,5 +96,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-# require "codeclimate-test-reporter"
-# CodeClimate::TestReporter.start
