@@ -1,4 +1,4 @@
-![Build Status](https://codeship.com/projects/c8d40b10-0af6-0133-06fa-7a3dfede6987/status?branch=master)![Code Climate](https://codeclimate.com/github/rovaira/bark_park.png) <!-- ![Coverage Status](https://coveralls.io/repos/rovaira/bark_park/badge.png) -->
+![Build Status](https://codeship.com/projects/c8d40b10-0af6-0133-06fa-7a3dfede6987/status?branch=master)![Code Climate](https://codeclimate.com/github/rovaira/bark_park.png)
 
 [![Coverage Status](https://coveralls.io/repos/rovaira/bark_park/badge.svg?branch=master&service=github)](https://coveralls.io/github/rovaira/bark_park?branch=master)
 
