@@ -1,4 +1,18 @@
-<p>
-  Modify me in `app/views/homes/index.html.erb` or change the root directive in
-  `config/routes.rb`
-</p>
+<div class="row fullWidth">
+  <div id="home-main-image">
+    <div class="inner row">
+      <!-- text -->
+      <div class="home-text-search">
+        <h1>BarkPark</h1>
+        <h2>Find dog parks near you.</h2>
+        <!-- search -->
+        <div class="home-search">
+          <div class="inner">
+            <%= link_to 'Woof', root_path %>
+          </div>
+        </div>
+      </div>
+      <%= image_tag('bea_park.jpg', position: "absolute", top: 0)%>
+    </div>
+  </div>
+</div>

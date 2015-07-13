@@ -114,6 +114,9 @@ $include-html-global-classes: $include-html-classes;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$transparent: rgba(0, 0, 0, 0);
+$topbar-orange: rgba(241, 114, 0, 1);
+
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -1400,8 +1403,8 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $topbar-orange;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
