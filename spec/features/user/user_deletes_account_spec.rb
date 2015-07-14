@@ -22,7 +22,7 @@ feature 'user deletes account', %{
 
     click_button 'Cancel my account'
 
-    expect(page).to have_content('Bye! Your account has been successfully 
+    expect(page).to have_content('Bye! Your account has been successfully
                                  cancelled.')
     expect(page).to have_content('Sign Up')
   end
