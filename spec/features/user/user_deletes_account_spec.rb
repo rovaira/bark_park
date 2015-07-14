@@ -7,7 +7,8 @@ feature 'user deletes account', %{
 } do
 
   #  Acceptance Criteria
-  # [] When I'm signed in, I have the option to go to my "Edit Profile" page and select a button to delete my account
+  # [] When I'm signed in, I have the option to go to my "Edit Profile" page and
+  # select a button to delete my account
   # [] I receive a confirmation that my account has been cancelled
   # [] And therefore, I am no longer signed into my account
 
@@ -21,7 +22,8 @@ feature 'user deletes account', %{
 
     click_button 'Cancel my account'
 
-    expect(page).to have_content('Bye! Your account has been successfully cancelled.')
+    expect(page).to have_content('Bye! Your account has been successfully 
+                                 cancelled.')
     expect(page).to have_content('Sign Up')
   end
 end
