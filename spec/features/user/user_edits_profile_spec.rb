@@ -6,19 +6,26 @@ feature 'edit_user_registration', %{
   So that I can keep my profile up to date
 } do
   # Acceptance Criteria
-  # [] I need to be a registered user
-  # [] I can click an 'Edit Profile' link to make changes
+  # [] If I'm signed in, I see a link to edit my profile as a drop down
+  # [] When I click the link, I can edit my information via form
+  # [] The form is populated w/ my current info with the password as stars
+  # [] When I submit the form, my information is updated
+  # [] I will see a confirmation on my profile page when form is submitted
 
-  scenario 'any visitor visits homepage' do
+  scenario 'authenticated user edits profile information' do
     user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
-    visit "/"
+    expect(page).to have_content('Signed in successfully')
 
-    expect(page).to have_content('BarkPark')
-    expect(page).to have_link('Fetch!')
+    visit edit_user_registration_path
 
-    click_on('Fetch!')
+    fill_in 'user[username]', with: 'newusername'
+    fill_in 'user[current_password]', with: user.password
 
-    expect(page).to have_content('BarkPark Map')
+    click_button 'Update'
+
+    expect(page).to have_content('newusername')
+    expect(page).to have_content('Your account has been updated successfully.')
   end
 end
