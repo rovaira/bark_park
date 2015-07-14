@@ -7,7 +7,7 @@ feature 'user deletes account', %{
 } do
 
   #  Acceptance Criteria
-  # [X] When I'm signed in, I have the option to go to my "Edit Profile" page and
+  # [X] When I'm signed in, I have the option to go to my "Edit Profile" page &
   # select a button to delete my account
   # [X] I receive a confirmation that my account has been cancelled
   # [X] And therefore, I am no longer signed into my account
