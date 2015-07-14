@@ -12,6 +12,11 @@ describe User do
   it { should have_valid(:email).when('user@example.com', 'another@gmail.com') }
   it { should_not have_valid(:email).when(nil, '', 'user', 'users@com',
     'users.com', 'usersuser@anothername123') }
+  it { should_not have_valid(:email).when('') }
+  it { should_not have_valid(:email).when('user') }
+  it { should_not have_valid(:email).when('users@com') }
+  it { should_not have_valid(:email).when('users.com') }
+  it { should_not have_valid(:email).when('usersuser@anothername123') }
 
   it 'has a matching password confirmation for the password' do
     user = User.new
