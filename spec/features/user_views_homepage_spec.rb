@@ -15,9 +15,10 @@ feature 'user visits homepage', %{
     visit "/"
 
     expect(page).to have_content('BarkPark')
-    expect(page).to have_link('Woof')
+    expect(page).to have_link('Fetch!')
 
-    click('Woof')
+    click_on('Fetch!')
+
     expect(page).to have_content('BarkPark Map')
   end
 end
