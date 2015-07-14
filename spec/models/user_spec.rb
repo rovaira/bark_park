@@ -9,8 +9,9 @@ describe User do
   it { should_not have_valid(:username).when('upsernamethatgoesonforever') }
   it { should_not have_valid(:username).when('with#$%^characters') }
 
-  it { should have_valid(:email).when('user@aexample.com', 'another@gmail.com') }
-  it { should_not have_valid(:email).when(nil, '', 'user', 'users@com', 'users.com', 'usersuser@anothername123') }
+  it { should have_valid(:email).when('user@example.com', 'another@gmail.com') }
+  it { should_not have_valid(:email).when(nil, '', 'user', 'users@com',
+    'users.com', 'usersuser@anothername123') }
 
   it 'has a matching password confirmation for the password' do
     user = User.new
