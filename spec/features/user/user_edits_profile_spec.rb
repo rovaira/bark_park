@@ -6,11 +6,10 @@ feature 'edit_user_registration', %{
   So that I can keep my profile up to date
 } do
   # Acceptance Criteria
-  # [] If I'm signed in, I see a link to edit my profile as a drop down
-  # [] When I click the link, I can edit my information via form
-  # [] The form is populated w/ my current info with the password as stars
-  # [] When I submit the form, my information is updated
-  # [] I will see a confirmation on my profile page when form is submitted
+  # [X] If I'm signed in, I see a link to edit my profile as a drop down
+  # [X] When I click the link, I can edit my information via form
+  # [X] When I submit the form, my information is updated
+  # [X] I will see a confirmation on my profile page when form is submitted
 
   scenario 'authenticated user edits profile information' do
     user = FactoryGirl.create(:user)
