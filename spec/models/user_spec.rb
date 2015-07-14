@@ -9,9 +9,8 @@ describe User do
   it { should_not have_valid(:username).when('upsernamethatgoesonforever') }
   it { should_not have_valid(:username).when('with#$%^characters') }
 
-  it { should have_valid(:email).when('user@example.com', 'another@gmail.com') }
-  it { should_not have_valid(:email).when(nil, '', 'user', 'users@com',
-    'users.com', 'usersuser@anothername123') }
+  it { should have_valid(:email).when('user@example.com') }
+  it { should have_valid(:email).when('another@gmail.com') }
   it { should_not have_valid(:email).when('') }
   it { should_not have_valid(:email).when('user') }
   it { should_not have_valid(:email).when('users@com') }
