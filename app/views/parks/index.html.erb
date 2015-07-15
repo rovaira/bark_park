@@ -1,1 +1,28 @@
 <h1>BarkPark Map</h1>
+
+<%= form_tag parks_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <% for park in @parks %>
+    <tr>
+      <td><%= park.address %></td>
+      <td><%= park.latitude %></td>
+      <td><%= park.longitude %></td>
+      <td><%= link_to "Show", park %></td>
+      <td><%= link_to "Edit", edit_park_path(park) %></td>
+      <td><%= link_to "Destroy", park, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Park", new_park_path %></p>
