@@ -24,7 +24,7 @@ class ParksController < ApplicationController
   def create
     @park = Park.new(park_params)
     if @park.save
-      redirect_to @park, :notice => "Successfully created park."
+      redirect_to @park, notice: "Successfully created park."
     else
       render :action => 'new'
     end
@@ -37,7 +37,7 @@ class ParksController < ApplicationController
   def update
     @park = Park.find(params[:id])
     if @park.update_attributes(params[:park])
-      redirect_to @park, :notice  => "Successfully updated park."
+      redirect_to @park, notice: "Successfully updated park."
     else
       render :action => 'edit'
     end
@@ -46,7 +46,7 @@ class ParksController < ApplicationController
   def destroy
     @park = Park.find(params[:id])
     @park.destroy
-    redirect_to parks_url, :notice => "Successfully destroyed park."
+    redirect_to parks_url, notice: "Successfully destroyed park."
   end
 
   private
