@@ -1,0 +1,25 @@
+<%- if @park.errors.present? -%>
+  <div class="large-12 alert-box alert" data-alert>
+    <ul>
+      <%- @park.errors.full_messages.each do |error| -%>
+        <li><%= error %></li>
+      <%- end -%>
+    </ul>
+  </div>
+<%- end -%>
+
+<%= form_for @park do |f| %>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
