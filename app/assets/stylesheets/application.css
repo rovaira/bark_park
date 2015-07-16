@@ -16,6 +16,14 @@
 
  */
 
+ .test {
+  background: #f17200;
+  opacity: 0.5;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+ }
+
 .fullWidth {
   width: 100%;
   margin-left: auto;

@@ -5,6 +5,12 @@ class ParksController < ApplicationController
     else
       @parks = Park.all
     end
+
+    @parks = Park.all
+    @hash = Gmaps4rails.build_markers(@parks) do |park, marker|
+      marker.lat park.latitude
+      marker.lng park.longitude
+    end
   end
 
   def show
