@@ -36,7 +36,7 @@ class ParksController < ApplicationController
 
   def update
     @park = Park.find(params[:id])
-    if @park.update_attributes(params[:park])
+    if @park.update_attributes(park_params)
       redirect_to @park, notice: "Successfully updated park."
     else
       render :action => 'edit'
