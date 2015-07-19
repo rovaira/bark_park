@@ -1,15 +1,13 @@
 class ParksController < ApplicationController
   def index
     if params[:search].present?
-      @parks = Park.near(params[:search], 50, order: 'distance')
+      parks = Park.near(params[:search], 5)
+      park_markers(parks)
+      locals parks: parks
     else
-      @parks = Park.all
-    end
-
-    @parks = Park.all
-    @hash = Gmaps4rails.build_markers(@parks) do |park, marker|
-      marker.lat park.latitude
-      marker.lng park.longitude
+      parks = Park.all
+      park_markers(parks)
+      locals parks: parks
     end
   end
 
@@ -54,4 +52,12 @@ class ParksController < ApplicationController
   def park_params
     params.require(:park).permit(:address, :latitude, :longitude)
   end
+
+  def park_markers(parks)
+    @hash = Gmaps4rails.build_markers(parks) do |park, marker|
+      marker.lat park.latitude
+      marker.lng park.longitude
+    end
+  end
+
 end
